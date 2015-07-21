@@ -740,7 +740,7 @@ static int oidc_handle_existing_session(request_rec *r, oidc_cfg * cfg,
 		/* get the compact serialized JWT from the session */
 		oidc_session_get(r, session, OIDC_IDTOKEN_SESSION_KEY, &s_id_token);
 		/* pass it to the app in a header or environment variable */
-		oidc_util_set_app_info(r, "id_token", s_id_token,
+		oidc_util_set_app_info(r, "id-token", s_id_token,
 				OIDC_DEFAULT_HEADER_PREFIX, dir_cfg->pass_info_in_headers, dir_cfg->pass_info_in_env_vars);
 	}
 
